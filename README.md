@@ -1,59 +1,34 @@
 # CountryApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.6.
+Aplicación del curso para consultar países. La Sección 9 deja preparada la estructura de navegación y presentación; la integración para cargar y buscar datos se trabajará en la Sección 10.
 
-## Development server
+## Sección 9: estructura de la aplicación
 
-To start a local development server, run:
+- Rutas de país separadas en `src/app/country/country.routes.ts` y cargadas de forma diferida.
+- Rutas para buscar por capital, país y región.
+- Layout y componentes compartidos para menú, búsqueda y lista de países.
+- Estilos con Tailwind CSS y DaisyUI.
 
-```bash
-ng serve
-```
+## Desarrollo
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Instala las dependencias con pnpm y ejecuta el servidor de desarrollo:
 
 ```bash
-ng generate component component-name
+pnpm install
+pnpm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La aplicación queda disponible en `http://localhost:4200/` y se actualiza al guardar cambios.
+
+## Compilar y probar
 
 ```bash
-ng generate --help
+pnpm build
+pnpm test
 ```
 
-## Building
+## Ramas
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `seccion9`: estructura inicial de CountryApp.
+- `seccion10`: continuación para cargar datos y hacer funcionar la aplicación.
+- `master`: versión final más reciente.
