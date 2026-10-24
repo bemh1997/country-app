@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "node scripts/generate-env.mjs && ng serve",
+    "build": "node scripts/generate-env.mjs && ng build",
+    "watch": "node scripts/generate-env.mjs && ng build --watch --configuration development",
+    "test": "node scripts/generate-env.mjs && ng test",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix"
   },
   "private": true,
   "dependencies": {
