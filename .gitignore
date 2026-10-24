@@ -21,12 +21,13 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
+.vscode/
+.history/*
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
 
 # Miscellaneous
 /.angular/cache
@@ -47,4 +48,4 @@ pnpm-workspace.yaml
 
 # Local API credentials and generated Angular environment
 .env
-# /src/environments/giphy-api-key.ts
+/src/environments/countries-api-key.ts

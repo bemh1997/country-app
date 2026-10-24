@@ -1,20 +1,39 @@
 # CountryApp
 
-Aplicación del curso para consultar países. La Sección 9 deja preparada la estructura de navegación y presentación; la integración para cargar y buscar datos se trabajará en la Sección 10.
+Aplicación del curso de Angular para consultar y explorar información de países. En la Sección 10 se conecta la interfaz con la API de países y se agregan búsquedas, resultados y páginas de detalle.
 
-## Sección 9: estructura de la aplicación
+## Funcionalidades
 
-- Rutas de país separadas en `src/app/country/country.routes.ts` y cargadas de forma diferida.
-- Rutas para buscar por capital, país y región.
-- Layout y componentes compartidos para menú, búsqueda y lista de países.
-- Estilos con Tailwind CSS y DaisyUI.
+- Buscar países por capital o nombre.
+- Consultar países por región.
+- Ver la información de un país y navegar entre sus países fronterizos.
+- Mostrar estados de carga, resultados vacíos y errores de búsqueda.
+- Navegación por rutas y componentes compartidos con Tailwind CSS y DaisyUI.
 
-## Desarrollo
+## Requisitos
 
-Instala las dependencias con pnpm y ejecuta el servidor de desarrollo:
+- Node.js y pnpm.
+- Una clave de acceso para la API de países.
+
+## Configuración y desarrollo
+
+Instala las dependencias:
 
 ```bash
 pnpm install
+```
+
+Crea un archivo `.env` a partir de `.env.example` y configura la variable `COUNTRIES_API_KEY` con tu clave:
+
+```text
+COUNTRIES_API_KEY=tu_clave
+```
+
+No subas el archivo `.env` ni compartas tu clave. El proyecto genera el archivo de configuración de Angular a partir de esta variable al iniciar o compilar.
+
+Inicia el servidor de desarrollo:
+
+```bash
 pnpm start
 ```
 
@@ -27,8 +46,8 @@ pnpm build
 pnpm test
 ```
 
-## Ramas
+## Ramas del curso
 
 - `seccion9`: estructura inicial de CountryApp.
-- `seccion10`: continuación para cargar datos y hacer funcionar la aplicación.
-- `master`: versión final más reciente.
+- `seccion10`: integración con la API y funcionalidades de búsqueda y detalle.
+- `master`: versión final del curso.

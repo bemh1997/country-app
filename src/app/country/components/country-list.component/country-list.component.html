@@ -1,19 +1,64 @@
-<section class="mt-5">
-	<table class="table table-md mt-2 w-full">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>Icono</th>
-				<th>Bandera</th>
-				<th>Nombre</th>
-				<th>Capital</th>
-				<th>Poblacion</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr></tr>
-		</tbody>
+<section class="my-5">
+  <table class="table table-md mt-2 w-full">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Código ISO</th>
+        <th>Bandera</th>
+        <th>Nombre</th>
+        <th>Capital</th>
+        <th>Poblacion</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (country of countries(); track country.code; let index = $index) {
+        <tr>
+          <td>{{ index + 1 }}</td>
+          <td [innerHTML]="country.flag.html_entity"></td>
+          <td>
+            <img [src]="country.flag.url_svg" [alt]="country.flag.description" class="w-10" />
+          </td>
+          <td>{{ country.name }}</td>
+          <td>{{ country.capital }}</td>
+          <td>
+            <span class="badge badge-secondary">
+              {{ country.population | number }}
+            </span>
+          </td>
+          <td>
+            <a [routerLink]="['/country/by/', country.code]" class="link-secondary cursor-pointer"
+              >Más información</a
+            >
+          </td>
+        </tr>
+      }
+      <!-- -->
+      @if (errorMessage()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            {{errorMessage()}}
+          </td>
+        </tr>
+      }
 
-	</table>
+       <!-- -->
+      @if (countries().length === 0 && !isLoading()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            No se encontraron resultados
+          </td>
+        </tr>
+      }
+
+       <!-- -->
+      @if ( isLoading()) {
+        <tr>
+          <td colspan="8" class="text-center">
+            <span class="loading loading-ring loading-xl"></span>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </section>
