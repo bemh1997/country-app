@@ -1,6 +1,8 @@
 <country-search-input
   placeholder="Buscar por país"
   (value)="query.set($event)"
+  [debounceTimeOut]="800"
+  [initialValue]="query()"
   />
 
 <country-list
