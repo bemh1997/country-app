@@ -50,4 +50,5 @@ pnpm test
 
 - `seccion9`: estructura inicial de CountryApp.
 - `seccion10`: integración con la API y funcionalidades de búsqueda y detalle.
+- `seccion11`: integración de caché, router, queryparameters, debounce.
 - `master`: versión final del curso.
